@@ -3,6 +3,7 @@ import Logo from './assets/Logo.png'
 import { TouchableOpacity } from 'react-native';
 import { Titulo } from './components/Titulo';
 import { EntradaTexto } from './components/EntradaTexto';
+import { Botao } from './components/Botao';
 
 
 export default function Login() {
@@ -15,38 +16,16 @@ export default function Login() {
       </Titulo>
 
       <Box>
-        <FormControl>
-          <FormControl.Label>Email</FormControl.Label>
-          <EntradaTexto 
-            placeholder='Insira seu endereço de email' 
-            size="lg" 
-            width="100%"
-            borderRadius="lg"
-            bgColor="gray.100"
-            shadow={3}
+        <EntradaTexto 
+            placeholder='Email'
+            label='Insira seu endereço de email'
             />
-        </FormControl>
-        <FormControl mt={3}>
-          <FormControl.Label>Senha</FormControl.Label>
           <EntradaTexto 
-            placeholder='Insira sua senha' 
-            type='password'
-            size="lg" 
-            width="100%"
-            borderRadius="lg"
-            bgColor="gray.100"
-            shadow={3}
+            placeholder='Senha'
+            label='Insira sua senha'
             />
-        </FormControl>
       </Box>
-      <Button
-        w="100%"
-        bg="blue.800"
-        mt={10}
-        borderRadius="lg"
-      >
-        Entrar
-      </Button>
+      <Botao>Entrar</Botao>
 
       <Link href='#' mt="2">
         Esqueceu a sua senha?

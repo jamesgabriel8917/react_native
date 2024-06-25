@@ -1,16 +1,24 @@
-import { Button, ITextProps } from "native-base"
-import { ReactNode } from "react"
+import { Button, IButtonProps } from 'native-base';
+import { ReactNode } from "react";
 
-interface TituloProps extends ITextProps{
-    children: ReactNode
+interface ButtonProps extends IButtonProps {
+  children: ReactNode;
+  autoSize?: boolean;
+  color?: string;
 }
 
-export function Botao({children, ...rest}: TituloProps){
-    return(
-        <Button
+export function Botao({ children, autoSize = false, color, ...rest }: ButtonProps){
 
-        >
-            {children}
-        </Button>
-    )
-}
+  return (
+    <Button
+      w={autoSize ? 'auto' : '100%'}
+      bg={color || 'blue.800'}
+      mt={10}
+      borderRadius="lg"
+      _text={{ color: 'white' }}
+      {...rest}
+    >
+      {children}
+    </Button>
+  );
+};
