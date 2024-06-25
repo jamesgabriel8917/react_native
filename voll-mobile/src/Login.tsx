@@ -2,6 +2,7 @@ import { VStack, Image, Text, Box, FormControl, Input, Button, Link } from 'nati
 import Logo from './assets/Logo.png'
 import { TouchableOpacity } from 'react-native';
 import { Titulo } from './components/Titulo';
+import { EntradaTexto } from './components/EntradaTexto';
 
 
 export default function Login() {
@@ -16,7 +17,7 @@ export default function Login() {
       <Box>
         <FormControl>
           <FormControl.Label>Email</FormControl.Label>
-          <Input 
+          <EntradaTexto 
             placeholder='Insira seu endereço de email' 
             size="lg" 
             width="100%"
@@ -27,7 +28,7 @@ export default function Login() {
         </FormControl>
         <FormControl mt={3}>
           <FormControl.Label>Senha</FormControl.Label>
-          <Input 
+          <EntradaTexto 
             placeholder='Insira sua senha' 
             type='password'
             size="lg" 
