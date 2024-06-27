@@ -1,9 +1,7 @@
-import { VStack, Image, Text, Box, FormControl, Input, Button, Link, Checkbox, ScrollView } from 'native-base'
+import { Image, Text, Box, Button, Checkbox, ScrollView } from 'native-base'
 import Logo from './assets/Logo.png'
-import { TouchableOpacity } from 'react-native';
 import { Titulo } from './components/Titulo';
 import { EntradaTexto } from './components/EntradaTexto';
-import { Botao } from './components/Botao';
 import { useState } from 'react';
 import { secoes } from './utils/CadastroEntradaTexto';
 
