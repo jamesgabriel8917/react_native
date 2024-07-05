@@ -12,9 +12,9 @@ interface CardProps{
 
 export function CardConsulta({nome, foto, especialidade, data, foiAtendido, foiAgendado}:CardProps){
     return(
-        <VStack w="100%" bg="white" p="5" borderRadius={25}>
+        <VStack w="100%" bg={foiAtendido ? 'blue.100': "white"} p="5" mb={5} borderRadius={25}>
             <VStack flexDir="row">
-                <Avatar source={{uri: "https://avatars.githubusercontent.com/u/44330297?v=4"}} size="lg"/>
+                <Avatar source={{uri: foto}} size="lg"/>
             
                 <VStack pl={4}>
                     <Text fontSize={20} bold >{nome}</Text>
@@ -23,7 +23,7 @@ export function CardConsulta({nome, foto, especialidade, data, foiAtendido, foiA
                 </VStack>
             </VStack>
             <Botao mt={4}>
-                Agendar consulta
+                {foiAgendado ? 'Cancelar' : 'Agendar consulta'}
             </Botao>
         </VStack>
     )
