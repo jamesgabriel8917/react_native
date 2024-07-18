@@ -23,6 +23,7 @@ export default function Login({ navigation }: any) {
           <EntradaTexto 
             placeholder='Senha'
             label='Insira sua senha'
+            type='password'
             />
       </Box>
       <Botao onPress={() => {navigation.navigate('Tabs')}}>Entrar</Botao>
