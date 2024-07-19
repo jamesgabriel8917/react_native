@@ -5,14 +5,16 @@ interface InputProps {
     placeholder: string;
     secureTextEntry?: boolean;
     leftIcon?: React.ReactNode;
-    type?: 'text' | 'password';
+    value?:string;
+    onChangeText?: (text: string) => void;
   }
 
   export function EntradaTexto ({ 
     label, 
     placeholder, 
-    type,
-    secureTextEntry = false
+    secureTextEntry = false,
+    value,
+    onChangeText
   } : InputProps) : JSX.Element {
     return (
       <FormControl mt={3}>
@@ -25,7 +27,8 @@ interface InputProps {
           bgColor="gray.100"
           secureTextEntry={secureTextEntry}
           shadow={3}
-          type={type}
+          value={value}
+          onChangeText={onChangeText}
         />
       </FormControl>
     );
