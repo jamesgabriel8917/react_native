@@ -16,8 +16,10 @@ export default function Login({ navigation }: any) {
   const [senha, setSenha] = useState('')
 
   const [carregando, setCarregando] = useState(true)
-
+  
   useEffect(() => {
+    //gambiarra para limpar o token
+    //AsyncStorage.removeItem('token')
     async function verificarLogin(){
       const token = await AsyncStorage.getItem('token')
       if(token){
