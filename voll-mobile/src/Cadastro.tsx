@@ -8,6 +8,9 @@ import { secoes } from './utils/CadastroEntradaTexto';
 export default function Cadastro() {
 
   const [numSecao, setNumSecao] = useState(0)
+  const [dados, setDados] = useState({} as any)
+
+
 
   function avancarSecao(){
     if(numSecao < secoes.length -1){
@@ -21,6 +24,11 @@ export default function Cadastro() {
     }
   }
 
+  function atualizarDados(id: string, valor: string){
+    setDados({...dados, [id]: valor})
+    console.log(dados)
+  }
+
   return (
     <ScrollView flex={1} p={5}>
       <Image source={Logo} alt='Logo Voll' mt="10" alignSelf="center"/>
@@ -31,11 +39,16 @@ export default function Cadastro() {
       <Box>
         {
           secoes[numSecao].entradaTexto?.map(entrada => {
-            return (<EntradaTexto
-                      label={entrada.label}
-                      placeholder={entrada.placeholder}
-                      key={entrada.id}
-                    ></EntradaTexto>)
+            return (
+            
+            <EntradaTexto
+              label={entrada.label}
+              placeholder={entrada.placeholder}
+              key={entrada.id}
+              secureTextEntry={entrada.secureTextEntry}
+              value={dados[entrada.name]}
+              onChangeText={(text) => {atualizarDados(entrada.name, text)}}
+            />)
           })
         }
       </Box>
@@ -63,4 +76,3 @@ export default function Cadastro() {
     </ScrollView>
   );
 }
-
