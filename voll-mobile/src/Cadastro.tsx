@@ -9,12 +9,15 @@ export default function Cadastro() {
 
   const [numSecao, setNumSecao] = useState(0)
   const [dados, setDados] = useState({} as any)
-
+  const [planos, setPlanos] = useState([] as number[])
 
 
   function avancarSecao(){
     if(numSecao < secoes.length -1){
       setNumSecao(numSecao+1)
+    }else{
+      console.log(dados)
+      console.log(planos)
     }
   }
 
@@ -26,7 +29,6 @@ export default function Cadastro() {
 
   function atualizarDados(id: string, valor: string){
     setDados({...dados, [id]: valor})
-    console.log(dados)
   }
 
   return (
@@ -40,7 +42,6 @@ export default function Cadastro() {
         {
           secoes[numSecao].entradaTexto?.map(entrada => {
             return (
-            
             <EntradaTexto
               label={entrada.label}
               placeholder={entrada.placeholder}
@@ -61,12 +62,20 @@ export default function Cadastro() {
         }
         {
           secoes[numSecao].Checkbox?.map(checkbox => {
-            return <Checkbox 
-            key={checkbox.id}
-            value={checkbox.value}
+            return (
+            <Checkbox 
+              key={checkbox.id}
+              value={checkbox.value}
+              onChange={() => setPlanos((planosAnteriores) => {
+                if(planosAnteriores.includes(checkbox.id)){
+                  return planosAnteriores.filter((id) => id!== checkbox.id)
+                }
+                return[...planosAnteriores, checkbox.id]
+              })}
+              isChecked={planos.includes(checkbox.id)}
             >
               {checkbox.value}
-            </Checkbox>
+            </Checkbox>)
           })
         }
       </Box>
