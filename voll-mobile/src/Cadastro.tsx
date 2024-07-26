@@ -17,8 +17,7 @@ export default function Cadastro() {
     if(numSecao < secoes.length -1){
       setNumSecao(numSecao+1)
     }else{
-      console.log(dados)
-      console.log(planos)
+      cadastrar()
     }
   }
 
@@ -104,7 +103,9 @@ export default function Cadastro() {
           })
         }
       </Box>
-      <Button mt={6} mb={6} onPress={() => {avancarSecao()}}>Avançar</Button>
+      <Button mt={6} mb={6} onPress={() => {avancarSecao()}}>
+        {numSecao ==2? 'Finalizar' : 'Avancar'}
+      </Button>
       {numSecao != 0 && <Button mb={6} onPress={() => {voltarSecao()}}>Voltar</Button>}
 
     </ScrollView>

@@ -37,7 +37,7 @@ export default function Login({ navigation }: any) {
       const pacienteId = tokenDecodificado.id
 
       AsyncStorage.setItem('token', token)
-      AsyncStorage.setItem(pacienteId, pacienteId)
+      AsyncStorage.setItem('pacienteId', pacienteId)
 
       navigation.replace('Tabs')
 
