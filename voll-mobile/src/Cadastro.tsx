@@ -57,10 +57,11 @@ export default function Cadastro() {
     }
   }
 
+
   return (
     <ScrollView flex={1} p={5}>
       <Image source={Logo} alt='Logo Voll' mt="10" alignSelf="center"/>
-
+      
       <Titulo>
         {secoes[numSecao].Titulo}
       </Titulo>
