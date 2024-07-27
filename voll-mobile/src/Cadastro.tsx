@@ -32,7 +32,7 @@ export default function Cadastro() {
   }
 
   async function cadastrar(){
-    const resultado = await cadastrarPaciente({
+    const paciente = {
       cpf: dados.cpf,
       nome: dados.email,
       email: dados.email,
@@ -48,7 +48,9 @@ export default function Cadastro() {
       possuiPlanoSaude: planos.length > 0,
       planosSaude: planos,
       imagem: dados.imagem
-    })
+    }
+    console.log(paciente)
+    const resultado = await cadastrarPaciente(paciente)
 
     if(!resultado){
       console.log("Erro ao fazer cadastro")
