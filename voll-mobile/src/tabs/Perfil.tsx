@@ -42,7 +42,7 @@ export default function Perfil({navigation }: any){
                 <Titulo color="blue.500">Informações pessoais</Titulo>
                 <Titulo fontSize="lg">{dadosPaciente.nome}</Titulo>
                 <Text>{dadosPaciente.email}</Text>
-                <Text>{dadosPaciente?.endereco.estado}</Text>
+                <Text>{dadosPaciente?.endereco?.estado}</Text>
 
                 <Divider mt={5}/>
                 <Titulo color="blue.500" mb={3}>Planos de saúde</Titulo>
