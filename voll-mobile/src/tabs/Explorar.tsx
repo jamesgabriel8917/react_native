@@ -63,7 +63,6 @@ export default function Explorar({navigation}: any){
                         }}
                     />
                 </VStack>
-
             ))}
         </ScrollView>
     )
